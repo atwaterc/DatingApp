@@ -263,3 +263,5 @@ paket-files/
 #Others
 .DS_Store
 .vscode/
+datingapp.db-shm
+datingapp.db-wal
