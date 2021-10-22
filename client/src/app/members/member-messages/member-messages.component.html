@@ -1,0 +1,44 @@
+<div class="card">
+    <div id="messageBody" class="card-body oflow">
+        <div *ngIf="messages?.length === 0">
+            No messages yet..
+        </div>
+
+        <ul *ngIf="messages?.length > 0" class="chat">
+            <li *ngFor="let message of messages">
+                <div>
+                    <span class="chat-img float-right">
+                        <img class="rounded-circle" src="{{message.senderPhotoUrl || '.assets/user.png'}}"
+                            alt="{{message.senderUsername}}">
+                    </span>
+                    <div class="chat-body">
+                        <div class="header">
+                            <span>{{message.content}}</span>
+                        </div>
+
+                        <small class="text-muted">
+                            <span class="fa fa-clock-o">Sent {{message.messageSent | timeago}}</span>
+                            <span class="text-danger" *ngIf="!message.dateRead && message.senderUsername !== username">
+                                <i class="fa fa-envelope ml-1"></i>
+                            </span>
+                            <span class="text-success float-right mr-2"
+                                *ngIf="message.dateRead && message.senderUsername !== username">
+                                {{message.dateRead | timeago}} <i class="fa fa-envelope-open ml-1"></i>
+                            </span>
+                        </small>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card-footer">
+        <form>
+            <div class="input-group">
+                <input type="text" class="form-control input-sm" placeholder="Send message here..">
+                <div class="input-group-append">
+                    <div class="btn btn-primary" type="submit">Send</div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

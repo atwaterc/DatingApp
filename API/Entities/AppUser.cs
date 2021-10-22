@@ -27,5 +27,8 @@ namespace API.Entities
         // #171 many to many relations for Likes
         public ICollection<UserLike> LikedByUsers { get; set; }
         public ICollection<UserLike> LikedUsers { get; set; }
+
+        public ICollection<Message> MessagesSent { get; set; }
+        public ICollection<Message> MessagesRecieved { get; set; }
     }
 }
