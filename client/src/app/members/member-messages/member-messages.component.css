@@ -22,7 +22,8 @@
 }
 
 .rounded-circle {
-    max-height: 50px;
+    max-height: 30px;
+    margin-right: 5px;
 }
 
 /* width */
