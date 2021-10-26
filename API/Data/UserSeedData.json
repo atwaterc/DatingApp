@@ -1,9 +1,9 @@
 [
   {
     "UserName": "Cory",
-    "Gender": "female",
+    "Gender": "male",
     "DateOfBirth": "1970-04-04",
-    "KnownAs": "Alba",
+    "KnownAs": "Cory",
     "Created": "2020-06-15",
     "LastActive": "2020-05-21",
     "Introduction": "Deserunt in quis elit anim laboris cillum sunt elit est reprehenderit sunt. Veniam cillum cupidatat exercitation deserunt eiusmod enim ullamco non aliqua occaecat culpa ad aliquip excepteur. Eiusmod magna adipisicing labore anim dolor sunt nostrud magna. Deserunt sint ad reprehenderit amet occaecat qui voluptate qui nisi velit amet in. Esse irure ut pariatur sit reprehenderit. Elit ullamco aliquip deserunt dolore nulla aliquip.\r\n",
@@ -13,7 +13,7 @@
     "Country": "Burundi",
     "Photos": [
       {
-        "Url": "https://randomuser.me/api/portraits/women/71.jpg",
+        "Url": "https://randomuser.me/api/portraits/men/71.jpg",
         "IsMain": true
       }
     ]
