@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { MessagesComponent } from '../messages/messages.component';
+import { Group } from '../_models/group';
 import { Message } from '../_models/message';
 import { User } from '../_models/user';
 import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
@@ -42,6 +43,19 @@ export class MessageService {
           //creates a new array which populates the BehaviourSubject
           this.messageThreadSource.next([...messages, message])
         })
+      })
+
+      this.hubConnection.on('UpdatedGroup', (group: Group) => {
+        if (group.connections.some(x => x.username === otherUsername)) {
+          this.messageThread$.pipe(take(1)).subscribe(messages => {
+            messages.forEach(message => {
+              if (!message.dateRead) {
+                message.dateRead = new Date(Date.now())
+              }
+            })
+            this.messageThreadSource.next([...messages]);
+          })
+        }
       })
   }
 
